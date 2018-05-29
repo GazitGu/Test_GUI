@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.em.gui.controller.ProductController">
+   <children>
+      <SplitPane dividerPositions="0.245" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox layoutX="1.0" layoutY="1.0" prefHeight="398.0" prefWidth="144.0">
+                     <children>
+                        <Label prefHeight="15.0" prefWidth="141.0" text="产品树:" />
+                        <TreeView fx:id="productTreeView" prefHeight="384.0" prefWidth="144.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="header" layoutX="42.0" layoutY="19.0" prefWidth="84.0" text="产品信息" />
+                  <GridPane layoutX="42.0" layoutY="49.0" prefHeight="267.0" prefWidth="318.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.0" minWidth="10.0" prefWidth="83.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="235.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="77.0" text="产品名称:" />
+                        <Label alignment="CENTER_RIGHT" prefWidth="77.0" text="交易帐号:" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER_RIGHT" prefWidth="77.0" text="关联交易员:" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER_RIGHT" prefWidth="77.0" text="关联风控员:" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER_RIGHT" prefWidth="77.0" text="产品描述:" GridPane.rowIndex="4" />
+                        <TextField fx:id="productName" GridPane.columnIndex="1" />
+                        <TextField fx:id="tradingAccount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <CheckComboBox fx:id="trader" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <CheckComboBox fx:id="riskController" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <Button layoutX="146.0" layoutY="330.0" mnemonicParsing="false" onAction="#submit" text="提交" />
+                  <Label fx:id="message" layoutX="69.0" layoutY="359.0" prefHeight="15.0" prefWidth="219.0" text="" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
